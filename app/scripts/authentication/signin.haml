@@ -1,0 +1,10 @@
+.container
+  .row
+    %form.center-block.authentication-form{name: 'signin_form', 'ng-submit' => 'signin()'}
+      %h2 Sign in
+      %input.email.form-control{name: 'email', type: 'email', placeholder: 'Email address', required: true, autofocus: true}
+      %input.password.form-control{name: 'password', type: 'password', placeholder: 'Password', required: true}
+      %br
+      %button.btn.btn-lg.btn-primary.btn-block{type: 'submit'} Sign in
+      %br
+      %a{href: '#/register'} Click here to register

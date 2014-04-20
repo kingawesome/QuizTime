@@ -32,7 +32,7 @@ module.exports = function (grunt) {
         tasks: ['bowerInstall']
       },
       haml: {
-        files: ['<%= yeoman.app %>/{,*/}*.haml'],
+        files: ['<%= yeoman.app %>/{,*/}*.haml', '<%= yeoman.app %>/scripts/{,*/}*.haml'],
         tasks: ['haml:dist']
       },
       coffee: {
@@ -185,7 +185,7 @@ module.exports = function (grunt) {
           {
             expand: true,
             cwd: '<%= yeoman.app %>',
-            src: '{,*/}*.haml',
+            src: '**/*.haml',
             dest: '.tmp',
             ext: '.html'
           }
@@ -423,7 +423,6 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
-      'haml:dist',
       'bowerInstall',
       'concurrent:server',
       'autoprefixer',

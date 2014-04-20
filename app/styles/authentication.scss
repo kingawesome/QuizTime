@@ -1,0 +1,18 @@
+@import 'main';
+@import 'compass/css3/border-radius';
+
+.authentication-form, .registration-form {
+  padding: 30px;
+  width: 400px;
+  background-color: $gray-lighter;
+  h2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+  input.email {
+    @include border-bottom-radius(0)
+  }
+  input.password {
+    @include border-top-radius(0)
+  }
+}
