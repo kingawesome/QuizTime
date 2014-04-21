@@ -7,6 +7,7 @@
       %input.email.form-control{name: 'email', type: 'email', placeholder: 'Email address', 'ng-model' => 'user.email', required: true, autofocus: true}
       %input.password.form-control{name: 'password', type: 'password', placeholder: 'Password', 'ng-model' => 'user.password', required: true}
       %br
-      %button.btn.btn-lg.btn-primary.btn-block{type: 'submit'} Register
+      %button.btn.btn-lg.btn-primary.btn-block{type: 'submit', 'ng-disabled' => 'signin_form.$invalid'}
+        Register
       %br
       %a{href: '#/signin'} Click here to sign in

@@ -1,6 +1,8 @@
 .container
   .row
-    %form.center-block.authentication-form{name: 'signin_form', 'ng-submit' => 'signin()'}
+    %form.center-block.authentication-form{name: 'signin_form', 'ng-submit' => 'sign_in(user.email, user.password)'}
+      .alert{'ng-class' => 'notification.type', 'ng-show' => 'notification.display'}
+        {{ notification.message }}
       %h2 Sign in
       %input.email.form-control{name: 'email', type: 'email', placeholder: 'Email address', 'ng-model' => 'user.email', required: true, autofocus: true}
       %input.password.form-control{name: 'password', type: 'password', placeholder: 'Password', 'ng-model' => 'user.password', required: true}

@@ -15,11 +15,13 @@
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/authentication.css">
     <!-- endbuild -->
   </head>
   <body ng-app="testApp">
-    <div class="container" ng-view="" ng-controller="SessionController"></div>
+    <div ng-controller="SessionController">
+        <div ng-controller="HeaderController"><div ng-include src="'scripts/header/header.html'"></div></div>
+        <div class="container" ng-view=""></div>
+    </div>
 
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -53,6 +55,7 @@
     <script src="scripts/authentication/authentication_controller.js"></script>
     <script src="scripts/authentication/session_controller.js"></script>
     <script src="scripts/authentication/user.js"></script>
+    <script src="scripts/header/header_controller.js"></script>
     <!-- endbuild -->
 </body>
 </html>
