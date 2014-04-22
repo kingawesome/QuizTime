@@ -11,3 +11,22 @@
     }
   }
 }
+
+.quiz_results {
+  .result {
+    padding: 30px;
+  }
+
+  .answer {
+    @include border-radius(5px);
+    padding: 30px;
+
+    &.correct {
+      background-color: $state-success-bg;
+    }
+
+    &.incorrect {
+      background-color: $state-danger-bg;
+    }
+  }
+}

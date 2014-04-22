@@ -15,6 +15,9 @@ angular.module('testApp', ['ngResource', 'ngRoute'])
       .when '/quiz/:question_id?',
         templateUrl: 'scripts/quiz/quiz.html'
         controller: 'QuizController'
+      .when '/score',
+        templateUrl: 'scripts/quiz/score.html'
+        controller: 'ScoreController'
       .otherwise
         redirectTo: '/signin'
 

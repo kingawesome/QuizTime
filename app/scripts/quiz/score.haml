@@ -1,0 +1,22 @@
+%h2
+  You scored {{Question.correct_percentage() | percentage}}
+
+.quiz_results
+  .result{'ng-repeat' => 'q in Question.questions'}
+    %h3
+      {{q.question}}
+    .answer.correct{'ng-if' => 'Question.user_answered_correctly(q)'}
+      %h4 Correct!
+      {{alpha[q.correct_answer]}}: {{q.answers[q.correct_answer]}}
+    .answer.incorrect{'ng-if' => '!Question.user_answered_correctly(q)'}
+      %h4 You answered incorrect:
+      %p{'ng-if' => 'q.user_selected != -1'}
+        {{alpha[q.user_selected]}}: {{q.answers[q.user_selected]}}
+      %p{'ng-if' => 'q.user_selected == -1'}
+        You didn't select an answer!
+        %br
+        ¯\_(ツ)_/¯
+      %h4 Correct answer:
+      %p
+        {{alpha[q.correct_answer]}}: {{q.answers[q.correct_answer]}}
+
