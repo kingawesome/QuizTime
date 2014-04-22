@@ -1,0 +1,13 @@
+@import 'compass/css3/border-radius';
+
+.quiz {
+  .question {
+    background: $gray-lighter;
+    padding: 30px;
+    @include border-radius(5px);
+
+    .answer {
+      margin-bottom: 5px;
+    }
+  }
+}

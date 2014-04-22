@@ -9,9 +9,9 @@
     margin-bottom: 30px;
   }
   input.email {
-    @include border-bottom-radius(0)
+    @include border-bottom-radius(0);
   }
   input.password {
-    @include border-top-radius(0)
+    @include border-top-radius(0);
   }
 }

@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('testApp').controller 'AuthenticationController', ($scope, $rootScope, User) ->
+angular.module('testApp').controller 'AuthenticationController', ($scope, $rootScope, $location, User) ->
   #TODO: Replace with actual pub/sub notication system with directive to display
   $scope.notification =
     display: false
@@ -22,12 +22,14 @@ angular.module('testApp').controller 'AuthenticationController', ($scope, $rootS
   $scope.user_registered = (user) ->
     $scope.notification.show('alert-success', 'Account successfully created.')
     $rootScope.$broadcast('USER_SIGNIN')
+    $rootScope.$broadcast('START_QUIZ')
 
   $scope.user_not_registered = (error) ->
     $scope.notification.show('alert-danger', error)
 
   $scope.user_authenticated = (user) ->
     $rootScope.$broadcast('USER_SIGNIN')
+    $rootScope.$broadcast('START_QUIZ')
 
   $scope.user_not_authenticated = (error) ->
     $scope.notification.show('alert-danger', error)

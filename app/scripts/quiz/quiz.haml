@@ -1,0 +1,13 @@
+.container.quiz
+  .row
+    %h3.center-block
+      {{normalized_current_question_id()}}. {{current_question.question}}
+    .question.center-block
+      .answers
+        .input-group.answer{'ng-repeat' => 'answer in current_question.answers'}
+          %label{for: 'answer{{$index}}'}
+            %input{type: 'radio', name: 'answer', 'ng-model' => 'current_question.user_selected', 'ng-value' => '{{$index}}', id: 'answer{{$index}}'}
+            {{alpha[$index]}}: {{answer}}
+      %br
+      %button.btn.btn-block.btn-primary{'ng-click' => 'next_question()'}
+        Continue

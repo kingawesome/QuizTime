@@ -1,0 +1,60 @@
+[
+  {
+    "question": "Which is not an advantage of using a closure?",
+    "answers": [
+      "Prevent pollution of global scope",
+      "Encapsulation",
+      "Private properties and methods",
+      "Allow conditional use of ‘strict mode"
+    ],
+    "correct_answer": "2"
+  },
+  {
+    "question": "To create a columned list of two-line email subjects and dates for a master-detail view, which are the most semantically correct?",
+    "answers": [
+      "<div>+<span>",
+      "<tr>+<td>",
+      "<ul>+<li>",
+      "<p>+<br>",
+      "none of these",
+      "all of these"
+    ],
+    "correct_answer": "2"
+  },
+  {
+    "question":  "To pass an array of strings to a function, you should not use...",
+    "answers": [
+      "fn.apply(this, stringsArray)",
+      "fn.call(this, stringsArray)",
+      "fn.bind(this, stringsArray)"
+    ],
+    "correct_answer": "2"
+  },
+  {
+    "question": "____ and ____ would be the HTML tags you would use to display a menu item and its description.",
+    "answers": [
+      "<li> + <a>",
+      "<div> + <span>",
+      "<menu> + <menuItem>"
+    ],
+    "correct_answer": "0"
+  },
+  {
+    "question": "Given <div id='outer'><div class='inner'></div></div>, which of these two is the most performant way to select the inner div ?",
+    "answers": [
+      "getElementById('outer').children[0]",
+      "getElementsByClassName('inner')[0]"
+    ],
+    "correct_answer": "0"
+  },
+  {
+    "question": "Given the following, which message will be returned by injecting this service and executing 'myService.getMessage()'?",
+    "code_sample": "",
+    "answers": [
+      "Message one!",
+      "Message two!",
+      "Message three!"
+    ],
+    "correct_answer": "2"
+  }
+]

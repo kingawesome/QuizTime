@@ -40,3 +40,8 @@ describe 'Controller: Session', ->
     spyOn(scope, 'handle_session')
     root_scope.$broadcast('USER_SIGNOUT')
     expect(scope.handle_session).toHaveBeenCalled
+
+  it 'should run "start_new_quiz" method on receiving "START_QUIZ" broadcast', ->
+    spyOn(scope, 'start_new_quiz')
+    root_scope.$broadcast('START_QUIZ')
+    expect(scope.start_new_quiz).toHaveBeenCalled

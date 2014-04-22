@@ -47,6 +47,11 @@ describe 'Controller: Authentication', ->
     scope.user_authenticated({foo: 'bar'})
     expect(rootScope.$broadcast).toHaveBeenCalledWith('USER_SIGNIN')
 
+  it 'should broadcast START_QUIZ when "user_authenticated" method called', ->
+    spyOn(rootScope, '$broadcast')
+    scope.user_authenticated({foo: 'bar'})
+    expect(rootScope.$broadcast).toHaveBeenCalledWith('START_QUIZ')
+
 
   describe 'With proper credentials', ->
     it 'should call "user_authenticated" when "sign_in" method is called', ->
