@@ -33,11 +33,11 @@
   {
     "question": "____ and ____ would be the HTML tags you would use to display a menu item and its description.",
     "answers": [
+      "<dl> + <dt>",
       "<li> + <a>",
-      "<div> + <span>",
-      "<menu> + <menuItem>"
+      "<div> + <span>"
     ],
-    "correct_answer": "0"
+    "correct_answer": "1"
   },
   {
     "question": "Given <div id='outer'><div class='inner'></div></div>, which of these two is the most performant way to select the inner div ?",
@@ -49,7 +49,7 @@
   },
   {
     "question": "Given the following, which message will be returned by injecting this service and executing 'myService.getMessage()'?",
-    "code_sample": "",
+    "code_sample": "angular.module(‘myModule’,[]).service(‘myService’,(function() {\n\tvar message = \"Message one!\"\n\tvar getMessage = function() {\n\t\treturn this.message\n\t}\n\tthis.message = \"Message two!\"\n\tthis.getMessage = function() { return message }\n\treturn function() {\n\t\treturn {\n\t\t\tgetMessage: getMessage,\n\t\t\tmessage: \"Message three!\"\n\t\t}\n\t}\n}) ())",
     "answers": [
       "Message one!",
       "Message two!",

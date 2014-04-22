@@ -50,3 +50,4 @@ angular.module('testApp').factory "User", ['$q', '$rootScope', ($q, $rootScope) 
 
   User
 ]
+

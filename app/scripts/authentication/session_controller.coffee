@@ -11,9 +11,7 @@ angular.module('testApp').controller 'SessionController', ($scope, $rootScope, $
       $location.path('/')
 
   $scope.start_new_quiz = ->
-    console.log('staritng new quiz')
     Question.create_quiz().then ->
-      console.log('redirecting')
       $location.path('/quiz/1')
 
 

@@ -2,6 +2,8 @@
   .row
     %h3.center-block
       {{normalized_current_question_id()}}. {{current_question.question}}
+    %pre.center-block.code_sample{'ng-if' => 'current_question.code_sample'}
+      {{current_question.code_sample}}
     .question.center-block
       .answers
         .input-group.answer{'ng-repeat' => 'answer in current_question.answers'}

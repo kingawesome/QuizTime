@@ -6,7 +6,7 @@ angular.module('testApp').controller 'QuizController', ($scope, $location, $rout
   Question.set_current_question($routeParams.question_id - 1)
   $scope.current_question = Question.current_question()
   unless $scope.current_question
-    console.log('go to score screen!')
+    $location.path('/score')
 
   $scope.next_question = ->
       $location.path('/quiz/' + $scope.next_question_id())
