@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('testApp').controller 'AuthenticationController', ($scope, $rootScope, $timeout, User) ->
+angular.module('testApp').controller 'AuthenticationController', ($scope, $rootScope, User) ->
   #TODO: Replace with actual pub/sub notication system with directive to display
   $scope.notification =
     display: false
@@ -14,7 +14,6 @@ angular.module('testApp').controller 'AuthenticationController', ($scope, $rootS
       this.display = false
 
   $scope.sign_in = (username, password) ->
-    console.log('signing in')
     User.authenticate(username, password).then($scope.user_authenticated, $scope.user_not_authenticated)
 
   $scope.register = (username, password) ->

@@ -12,12 +12,14 @@ angular.module('testApp').factory "User", ['$q', '$rootScope', ($q, $rootScope) 
 
   # These would obviously be $http or $resource calls and we would not be storing them in plaintext
   # example: return $http.post( API.LOGIN_URL, { username: username, password: prehashed_password } );
+  # Stubbing out some $q defer objects to facilitate building controllers around expected ajax returns
 
   User.authenticate = (username, password) ->
     deferred = $q.defer()
     for key, user of User.default_users
       if user.username == username && password == password
         User.current_user = {id: '123ad124', username: username}
+        User.signed_in = true
         deferred.resolve(User.current_user)
         return deferred.promise
     deferred.reject('Username or password is invalid.')
@@ -36,6 +38,7 @@ angular.module('testApp').factory "User", ['$q', '$rootScope', ($q, $rootScope) 
       return deferred.promise
 
     User.current_user = {id: '123ad124', username: username}
+    User.signed_in = true
     User.default_users.push({username: username, password: password})
     deferred.resolve(User.current_user)
     return deferred.promise
