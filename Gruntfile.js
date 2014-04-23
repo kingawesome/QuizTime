@@ -305,7 +305,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: ['*.html', 'views/{,*/}*.html'],
+          src: ['*.html', 'views/{,*/}*.html', 'scripts/{,*/}*.html'],
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -344,6 +344,7 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             '*.html',
+            'raw_data/*',
             'views/{,*/}*.html',
             'images/{,*/}*.{webp}',
             'fonts/*'
@@ -353,6 +354,13 @@ module.exports = function (grunt) {
           cwd: '.tmp/images',
           dest: '<%= yeoman.dist %>/images',
           src: ['generated/*']
+        }, {
+          expand: true,
+          cwd: '.tmp/scripts',
+          dest: '<%= yeoman.dist %>/scripts',
+          src: [
+            '{,*/}*.html'
+          ]
         }]
       },
       styles: {
@@ -375,6 +383,7 @@ module.exports = function (grunt) {
         'compass'
       ],
       dist: [
+        'haml',
         'coffee',
         'compass:dist',
         'imagemin',
