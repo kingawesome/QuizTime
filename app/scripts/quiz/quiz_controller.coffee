@@ -11,6 +11,7 @@ angular.module('testApp').controller 'QuizController', ($scope, $location, $rout
   $scope.next_question = ->
       $location.path('/quiz/' + $scope.next_question_id())
 
+  #TODO: Obviously these should be moved to the Question service
   $scope.normalized_current_question_id = ->
     parseInt(Question.current_question_index) + 1
 

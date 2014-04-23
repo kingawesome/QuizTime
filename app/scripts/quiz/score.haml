@@ -4,7 +4,7 @@
 .quiz_results
   .result{'ng-repeat' => 'q in Question.questions'}
     %h3
-      {{q.question}}
+      {{$index + 1}}. {{q.question}}
     %pre.center-block.code_sample{'ng-if' => 'current_question.code_sample'}
       {{current_question.code_sample}}
     .answer.correct{'ng-if' => 'Question.user_answered_correctly(q)'}
