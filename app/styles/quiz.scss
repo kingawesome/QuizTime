@@ -8,6 +8,11 @@
 
     .answer {
       margin-bottom: 5px;
+      label {
+        input {
+          margin-right: 5px;
+        }
+      }
     }
   }
 }
