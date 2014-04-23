@@ -24,11 +24,11 @@ describe 'Controller: Session', ->
       User: mock_user
     }
 
-  it 'should change location to "/" if user is signed out', inject( ($location) ->
+  it 'should change location to "/signin" if user is signed out', inject( ($location) ->
     $location.path('/something')
     expect($location.path()).toBe('/something')
     scope.handle_session()
-    expect($location.path()).toBe('/')
+    expect($location.path()).toBe('/signin')
   )
 
   it 'should run "handle_session" method on receiving "USER_SIGNIN" broadcast', ->

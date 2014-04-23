@@ -5,7 +5,7 @@ angular.module('testApp').factory "Question", ['$http', ($http) ->
   Question.total_questions = 0
 
   # Ideally this would be something that accepts a param or url so you could switch between multiple quizzes.
-  # Works good for now as prototype
+  # Works good for now as prototype to bootstrap a quick quiz from a known datasource
   Question.create_quiz = ->
     Question.load_questions('/raw_data/questions.json')
 
