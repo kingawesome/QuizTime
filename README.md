@@ -12,3 +12,6 @@ Took me about 3 days working for a few hours each day in between normal work.
 
 You can see a live demo of the app
 [here](http://nathanlhess.com)
+
+Registering a new user is only good for the lifetie of your browser session (no backend hooked up for this demo app).
+Or you can use the demo account that is already registered (test@test.com:password).
